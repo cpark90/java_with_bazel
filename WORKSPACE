@@ -35,19 +35,15 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 maven_install(
     artifacts = [
-        "org.springframework.boot:spring-boot-starter-web:2.1.5.RELEASE",
-    ],
-    repositories = [
-        "https://jcenter.bintray.com",
-    ]
-)
-
-maven_install(
-    name = "server_app",
-    artifacts = [
+        'org.springframework.boot:spring-boot-autoconfigure:2.1.5.RELEASE',
+        'org.springframework.boot:spring-boot-starter-web:2.1.5.RELEASE',
+        'org.springframework.boot:spring-boot:2.1.5.RELEASE',
+        'org.springframework:spring-web:5.1.5.RELEASE',
+        
         "com.google.guava:guava:27.0-jre",
     ],
     repositories = [
-        "https://repo1.maven.org/maven2",
+        'https://repo1.maven.org/maven2',
     ],
+    fetch_sources = True,
 )

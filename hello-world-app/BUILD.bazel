@@ -14,12 +14,12 @@ exports_files([
 java_library(
     name = "java_image_library",
     srcs = ["Library.java"],
-    deps = ["@server_app//:com_google_guava_guava",],
+    deps = ["@maven//:com_google_guava_guava",],
 )
 
 java_image(
     name = "java_docker_image",
     srcs = ["Binary.java"],
     layers = [":java_image_library"],
-    main_class = "examples.images.Binary",
+    main_class = "hello_world_app.Binary",
 )

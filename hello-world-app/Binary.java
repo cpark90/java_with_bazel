@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package examples.images;
+package hello_world_app;
 
-import examples.Library;
+import hello_world_app.Library;
 
 public class Binary {
     public static void main(String[] args) {
