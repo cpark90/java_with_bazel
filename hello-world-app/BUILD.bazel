@@ -1,0 +1,25 @@
+load("@io_bazel_rules_docker//java:image.bzl", "java_image")
+load("@io_bazel_rules_docker//lang:image.bzl", container_image = "app_layer")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files([
+    "Binary.java",
+])
+
+exports_files([
+    "Library.java",
+])
+
+java_library(
+    name = "java_image_library",
+    srcs = ["Library.java"],
+    deps = ["@server_app//:com_google_guava_guava",],
+)
+
+java_image(
+    name = "java_docker_image",
+    srcs = ["Binary.java"],
+    layers = [":java_image_library"],
+    main_class = "examples.images.Binary",
+)
